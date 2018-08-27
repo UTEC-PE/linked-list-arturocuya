@@ -23,8 +23,7 @@ public:
         if (head == NULL) {
             return NULL;
         } else {
-            Node<T> *mNode = head;
-            return mNode->data;
+            return head->data;
         }
     };
 
@@ -117,7 +116,7 @@ public:
     };
 
     bool empty() {
-        return head != NULL;
+        return head == NULL;
     };
 
     int size() {

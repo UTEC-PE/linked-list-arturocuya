@@ -5,13 +5,13 @@
 int main() {
     List<int> *list = new List<int>;
 
-    list->push_back(22);
-    list->push_back(12);
-    list->push_back(33);
-    list->push_back(14);
-    list->push_back(5);
-    list->push_back(99);
-    list->print();
+    list->push_back(3);
+    list->push_back(6);
+    list->push_back(2);
+    list->push_back(8);
+    list->push_back(6);
+    list->push_back(7);
+    list->print(); cout << endl;
     cout << "Size: " << list->size() << endl;
     cout << "Front: " << list->front() << endl;
     cout << "Back: " << list->back() << endl;
