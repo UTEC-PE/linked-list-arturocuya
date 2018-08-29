@@ -108,11 +108,17 @@ public:
     };
 
     void concat(List<int> *other) {
-        Node<T> *Tmp = head;
-        while (Tmp->next) {
-            Tmp = Tmp->next;
+        if (!this->empty()) {
+            if (!other->empty()) {
+                Node<T> *Tmp = head;
+                while (Tmp->next) {
+                    Tmp = Tmp->next;
+                }
+                Tmp->next = other->head;
+            } // En caso que la otra lista esté vacía, no hago nada :)
+        } else {
+            head = other->head;
         }
-        Tmp->next = other->head;
     };
 
     bool empty() {

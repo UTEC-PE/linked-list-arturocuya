@@ -67,6 +67,29 @@ int main() {
     aList->print_reverse();
     cout << endl;
 
+    cout << "Concatenating empty list with non empty list" << endl;
+    List<int> *emptyBoi_1 = new List<int>;
+    List<int> *nonEmptyBoi_1 = new List<int>;
+
+    nonEmptyBoi_1->push_back(3);
+    nonEmptyBoi_1->push_back(4);
+    nonEmptyBoi_1->push_back(5);
+
+    emptyBoi_1->concat(nonEmptyBoi_1);
+
+    cout << "Result: "; emptyBoi_1->print(); cout << endl;
+
+    cout << "Concatenating non empty list with empty list" << endl;
+    List<int> *nonEmptyBoi_2 = new List<int>;
+    List<int> *emptyBoi_2 = new List<int>;
+
+    nonEmptyBoi_2->push_back(44);
+    nonEmptyBoi_2->push_back(55);
+    nonEmptyBoi_2->push_back(66);
+
+    nonEmptyBoi_2->concat(emptyBoi_2);
+
+    cout << "Result: "; nonEmptyBoi_2->print(); cout << endl;
 
     return 0;
 }
