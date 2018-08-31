@@ -21,7 +21,7 @@ public:
 
     T front() {
         if (head == NULL) {
-            return NULL;
+            return NULL; // Deberías retornar una excepción (throw, no null)
         } else {
             return head->data;
         }
@@ -29,7 +29,7 @@ public:
 
     T back() {
         if (head == NULL) {
-            return NULL;
+            return NULL; // Igual que el caso anterior
         } else {
             Node<T> *Tmp = head;
             while (Tmp->next) {
@@ -65,14 +65,14 @@ public:
     };
 
     void pop_front() {
-        Node<T> *Tmp = head;
+        Node<T> *Tmp = head; // No estás controlando el caso vacío
         head = Tmp->next;
         delete Tmp;
         Tmp = nullptr;
     };
 
     void pop_back() {
-        Node<T> *Tmp = head;
+        Node<T> *Tmp = head; // Igual que el caso anterior
         while (Tmp->next->next) {
             Tmp = Tmp->next;
         }
@@ -83,7 +83,7 @@ public:
     T get(int position) {
         if (position < 0) {
             // TODO: Throw accurate exception: Index out of range
-            return NULL;
+            return NULL; // Deberían ser excepciones, no NULLS
         } else if (head == NULL) {
             // TODO: Throw accurate exception: List empty
             return NULL;
@@ -107,7 +107,7 @@ public:
         }
     };
 
-    void concat(List<int> *other) {
+    void concat(List<int> *other) { // Podrías usar tail en tu implementación para mejorar los tiempos
         if (!this->empty()) {
             if (!other->empty()) {
                 Node<T> *Tmp = head;
@@ -125,7 +125,7 @@ public:
         return head == NULL;
     };
 
-    int size() {
+    int size() { // Podrías usar el int nodes para mejorar los tiempos
         int r = 0;
         if (head == NULL) {
             return r;
@@ -154,7 +154,7 @@ public:
 
     void print_reverse() {
         Node<T> *NTmp = head;
-        List<T> *LTmp = new List<T>;
+        List<T> *LTmp = new List<T>; // Podrías usar un array en vez de una lista para mejorar los tiempos
         while (NTmp) {
             LTmp->push_front(NTmp->data);
             NTmp = NTmp->next;

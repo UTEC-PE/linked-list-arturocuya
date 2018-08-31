@@ -6,9 +6,9 @@ struct Node {
     T data;
     struct Node* next;
 
-    Node<T>(): data(NULL), next(NULL) {};
+    Node<T>(): data(NULL), next(NULL) {}; // data no debería ser NULL
 
-    void killSelf(){
+    void killSelf(){ // Esto está mal, debería ser if (next) next->killSelf(); delete this;
         if (next){
             delete next;
         }
